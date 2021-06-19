@@ -74,6 +74,7 @@ macro copy*(child: ref object, parent: ref object): untyped =
       `child`.`field` = `parent`.`field`
 
 macro copyAs*(parent: ref object, child: typedesc, name: untyped): untyped =
+  ## Duplicates an object into a new object of `child` with `name`
   runnableExamples:
     type 
       A = ref object of RootObj
