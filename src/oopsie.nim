@@ -60,7 +60,7 @@ macro copy*(child: ref object, parent: ref object): untyped =
       a = A(a: 100, b: 200, c: 20)
       b = B()
     b.copy(a)
-    assert b == B(a: 100, b: 200, c: 20)
+    assert b[] == B(a: 100, b: 200, c: 20)[]
 
   let fields = getFields(parent)
   result = newStmtList()
@@ -82,7 +82,7 @@ macro copyAs*(parent: ref object, child: typedesc, name: untyped): untyped =
         d: float
     var a = A(a: 100, b: 200, c: 20)
     a.copyAs(B, newVar)
-    assert newVar[] == B(a: 100, b: 200, c: 20)
+    assert newVar[] == B(a: 100, b: 200, c: 20)[]
 
   let fields = getFields(parent)
   result = nnkObjConstr.newTree(child)
