@@ -9,6 +9,7 @@ proc superImpl(obj: NimNode): NimNode =
   impl[1][0]
 
 macro inherits*(a: typed): bool =
+  ## Returns `true` if the type or object inherits from an object.
   var impl = a.getImpl
   result = newLit false
   if impl.kind == nnkNilLit:
