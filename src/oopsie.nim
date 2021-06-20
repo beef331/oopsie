@@ -20,7 +20,8 @@ macro super*(obj: ref object): untyped =
   obj.superImpl
 
 macro rootSuper*(obj: ref object): untyped =
-  ## Gets the root parent of this `obj`
+  ## Gets the root parent of this `obj`, 
+  ## does not get `RootObj`
   runnableExamples:
     type 
       A = ref object of RootObj
