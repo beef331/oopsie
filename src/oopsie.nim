@@ -85,7 +85,7 @@ macro copy*[C: Inherits, P: Inherits](child: C, parent: P): untyped =
     result.add quote do:
       `child`.`field` = `parent`.`field`
 
-macro copyAs*(parent: Inherits, child: typedesc, name: untyped): untyped =
+macro copyAs*(parent: Inherits, child: typedesc[Inherits], name: untyped): untyped =
   ## Duplicates an object into a new object of `child` with `name`
   runnableExamples:
     type 
